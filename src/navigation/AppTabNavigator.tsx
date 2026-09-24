@@ -2,7 +2,7 @@ import { Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/tab-screens/HomeScreen";
 import ProfileScreen from "../screens/tab-screens/ProfileScreen";
-import DetailsScreen from "../screens/tab-screens/DetailsScreen";
+import DetailsStackNavigator from "./DetailsStackNavigator";
 
 export type RootTabParamList = {
   Home: undefined;
@@ -46,10 +46,15 @@ export const AppTabNavigator = () => {
             />
           ),
         }}
+        listeners={() => ({
+          tabPress: () => {
+            console.log("Pressed -> Profile");
+          },
+        })}
       />
       <Tab.Screen
         name="Details"
-        component={DetailsScreen}
+        component={DetailsStackNavigator}
         options={{
           tabBarIcon: ({ focused }) => (
             <Image

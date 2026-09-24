@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Button } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import { RootStackParamList } from "../navigation/AppNavigator";
+import { RootStackParamList } from "../navigation/DetailsStackNavigator";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;
 
